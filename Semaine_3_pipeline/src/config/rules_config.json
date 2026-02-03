@@ -1,0 +1,41 @@
+{
+  "seuils": {
+    "reglementaire": 10000,
+    "exceptionnel": 100000,
+    "structuring": 9500,
+    "surveillance_renforcee": 50000
+  },
+  "pays_sanctions": ["RU", "SY", "IR", "KP", "CU", "VE", "BY", "MM"],
+  "listes_noires": {
+    "OFAC": ["US123456789", "RU987654321", "SY112233445", "IR5566778899"],
+    "UE": ["EU789012345", "EU345678901"],
+    "interne": ["XY9988776655", "FRAUD12345", "SUSPECT999"]
+  },
+  "coefficients_risque": {
+    "PAYS_SANCTIONNE": 100,
+    "LISTE_NOIRE_OFAC": 80,
+    "LISTE_NOIRE_INTERNE": 60,
+    "CLIENT_PEP": 50,
+    "MONTANT_EXCEPTIONNEL": 40,
+    "SUSPICION_STRUCTURING": 35,
+    "SEUIL_REGLEMENTAIRE": 30,
+    "CLIENT_RISQUE_ELEVE": 25
+  },
+  "niveaux_alerte": {
+    "Critique": 100,
+    "Élevé": 70,
+    "Moyen": 30,
+    "Faible": 0
+  },
+  "parametres_detection": {
+    "structuring": {
+      "nb_transactions_min": 2,
+      "periode_jours": 1,
+      "seuil_total_min": 15000
+    },
+    "surveillance_client": {
+      "augmentation_soudaine": 500,
+      "changement_comportement": 300
+    }
+  }
+}

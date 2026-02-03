@@ -1,0 +1,123 @@
+PROJET D'AUTOMATISATION - SURVEILLANCE TRANSACTIONNELLE & REPORTING RÉGLEMENTAIRE
+===================================================================================
+Document: Besoins & Analyse Métier
+Date: 30/02/2026
+Auteur: AMOUGOU André Désiré Junior
+Projet: Automatisation RPA/IA pour processus de compliance bancaire
+
+1. CONTEXTE ET OBJECTIF
+-----------------------------------------------------------------------------------
+La direction de la Conformité de la banque doit produire quotidiennement un rapport
+de surveillance des transactions pour identifier les opérations suspectes (blanchiment
+d'argent, financement du terrorisme, violations de sanctions).
+
+L'objectif est d'automatiser ce processus manuel, lent et sujet aux erreurs, en
+déployant une solution RPA (Blue Prism) orchestrant un pipeline de données (Python)
+et une analyse par règles métier et IA.
+
+2. PROCESSUS ACTUEL (MANUEL - "AS-IS")
+-----------------------------------------------------------------------------------
+[OPÉRATEUR CONFORMITÉ]
+    │
+    ├──1. Réception de 3 fichiers sources par email :
+    │      • transactions_du_jour.xlsx (≈ 60 transactions)
+    │      • referentiel_clients.xlsx (≈ 30 clients)
+    │      • listes_noires.xlsx (contreparties sanctionnées)
+    │
+    ├──2. Ouverture et consolidation manuelle des fichiers Excel.
+    │
+    ├──3. Application VISUELLE des règles métier pour chaque transaction :
+    │      • Vérification si le MONTANT > 10 000 € (seuil réglementaire).
+    │      • Vérification du CLIENT : Niveau de risque (Élevé, PEP).
+    │      • Vérification du BÉNÉFICIAIRE : Présence sur listes noires (OFAC, UE).
+    │      • Vérification du PAYS de destination (pays sous sanctions).
+    │      • Détection de schémas suspects (ex: "structuring" -> montants fractionnés).
+    │
+    ├──4. Copie-colle des lignes "à risque" dans un nouveau rapport Excel.
+    │
+    ├──5. Ajout manuel de commentaires et d'un niveau de priorité.
+    │
+    └──6. Envoi du rapport final par email à l'équipe d'investigation.
+
+Temps moyen du processus manuel : **2 à 3 heures par jour**.
+
+3. PROBLÈMES IDENTIFIÉS (PAINS)
+-----------------------------------------------------------------------------------
+3.1. RISQUES RÉGLEMENTAIRES & OPÉRATIONNELS :
+    • **Erreurs humaines** : Oublis de vérifications, faux positifs/négatifs.
+    • **Incohérences** : Application variable des règles selon l'opérateur.
+    • **Délais de traitement** : Temps élevé accroît le risque de non-conformité.
+    • **Traçabilité limitée** : Difficulté à auditer qui a fait quelle décision.
+
+3.2. INEFFICACITÉS MÉTIER :
+    • **Tâches répétitives et non valorisantes** pour les analystes.
+    • **Scalabilité impossible** : Le volume croissant de transactions accroît la charge.
+    • **Réactivité faible** : Détection tardive des transactions critiques.
+
+4. DONNÉES GÉNÉRÉES POUR LE PROJET (SIMULATION RÉALISTE)
+-----------------------------------------------------------------------------------
+Pour ce projet POC, les fichiers suivants ont été générés pour simuler un environnement réaliste :
+
+4.1. FICHIER CLIENTS (clients.xlsx) : 30 entrées
+    • Colonnes : Client_ID, Nom, Pays, Niveau_Risque, Date_Inscription, Segment, Encours_Annuel, Industrie, Est_PEP, Score_Risque.
+    • Données notables :
+        - 5 clients à risque "Élevé".
+        - 1 Personne Politiquement Exposée (PEP) identifiée.
+        - Clients de divers segments (Comptant, Entreprise, Privé).
+
+4.2. FICHIER TRANSACTIONS (transactions.xlsx) : 60 entrées
+    • Colonnes : Transaction_ID, Date, Heure, Client_ID, Type_Operation, Montant, Devise, Bénéficiaire, Pays_Bénéficiaire, Canal, Statut_Compliance, Priorité, Pattern, Commentaire.
+    • Scénarios suspects intégrés :
+        - Transactions > 10 000 € (seuil réglementaire).
+        - Bénéficiaires dans des pays sous sanctions (RU, SY, IR, etc.).
+        - Schémas de "structuring" (montants fractionnés juste sous 10k€).
+        - Contreparties sur listes noires simulées (ex: US123456789 - OFAC).
+
+5. BESOINS FONCTIONNELS POUR L'AUTOMATISATION (TO-BE)
+-----------------------------------------------------------------------------------
+5.1. ORCHESTRATION ET PILOTAGE (RPA - Blue Prism) :
+    • Besoin 1 : Déclenchement automatique du processus à heure fixe.
+    • Besoin 2 : Récupération et validation des fichiers sources.
+    • Besoin 3 : Gestion des erreurs (fichiers manquants, formats invalides).
+    • Besoin 4 : Appel et supervision du pipeline de traitement Python/IA.
+    • Besoin 5 : Archivage des données sources et des résultats.
+
+5.2. TRAITEMENT DES DONNÉES ET RÈGLES MÉTIER (Python) :
+    • Besoin 6 : Chargement et consolidation des fichiers.
+    • Besoin 7 : Application des règles métier configurées :
+        Règle 1 : Alerter toute transaction > 10 000 €.
+        Règle 2 : Alerter si client "Niveau_Risque = Élevé" ou "Est_PEP = Oui".
+        Règle 3 : Bloquer si "Pays_Bénéficiaire" dans liste des pays sous sanctions.
+        Règle 4 : Détecter les schémas de "structuring" (séries de transactions < 10k€ en peu de temps).
+    • Besoin 8 : Création d'un fichier de résultats structuré avec niveaux de priorité.
+
+5.3. ANALYSE AVANCÉE ET DÉTECTION D'ANOMALIES (IA/ML) :
+    • Besoin 9 : Intégration d'un modèle de scoring de risque transactionnel.
+    • Besoin 10 : Détection des déviations par rapport au profil historique du client.
+    • Besoin 11 : Classement automatique des alertes par criticité.
+
+5.4. REPORTING ET SUPERVISION (Dashboard) :
+    • Besoin 12 : Génération automatique d'un rapport Excel synthétique.
+    • Besoin 13 : Création d'un dashboard de supervision avec KPIs.
+    • Besoin 14 : Alerting email pour les transactions "Priorité = Critique".
+
+6. INDICATEURS DE SUCCÈS (KPIs) ET GAINS ATTENDUS
+-----------------------------------------------------------------------------------
+6.1. GAINS OPÉRATIONNELS :
+    • Réduction du temps de traitement : De 3h → à moins de 15 min (≈ -90%).
+    • Réduction des erreurs manuelles : Cibler 0% de faux négatifs sur règles métier.
+    • Augmentation de la capacité de traitement : Scalable à des milliers de transactions/jour.
+
+6.2. GAINS RÉGLEMENTAIRES ET DE CONFORMITÉ :
+    • Traçabilité complète : Log de toutes les décisions et règles appliquées.
+    • Détection plus précoce des schémas complexes (structuring, réseaux).
+    • Meilleure préparation aux audits (documentation automatique).
+
+7. PROCHAINES ÉTAPES (ROADMAP DU POC)
+-----------------------------------------------------------------------------------
+1. Finaliser ce document d'analyse (Semaine 1).
+2. Concevoir l'architecture technique détaillée (Semaine 2).
+3. Développer le pipeline Python de traitement (Semaine 3).
+4. Modéliser le processus Blue Prism d'orchestration (Semaine 4).
+5. Construire le dashboard de reporting (Semaine 5).
+6. Préparer la présentation et le livrable final (Semaine 6).

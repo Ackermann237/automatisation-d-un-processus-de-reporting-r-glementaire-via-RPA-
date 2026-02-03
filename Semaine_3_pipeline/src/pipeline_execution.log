@@ -1,0 +1,160 @@
+2026-01-31 20:56:51,423 - INFO - ============================================================
+2026-01-31 20:56:51,423 - INFO - DÉMARRAGE DU PIPELINE DE COMPLIANCE
+2026-01-31 20:56:51,423 - INFO - ============================================================
+2026-01-31 20:56:51,423 - INFO - Chargement des données...
+2026-01-31 20:56:51,462 - INFO - Validation des données...
+2026-01-31 20:56:51,467 - INFO - Nettoyage des données...
+2026-01-31 20:56:51,479 - INFO - Enrichissement des données...
+2026-01-31 20:56:51,493 - INFO - Application des règles de compliance...
+2026-01-31 20:56:51,518 - INFO -    • Transactions > 10k€ : 48
+2026-01-31 20:56:51,518 - INFO -    • Clients risque élevé : 23
+2026-01-31 20:56:51,518 - INFO -    • Clients PEP : 2
+2026-01-31 20:56:51,518 - INFO -    • Pays sanctionnés : 2
+2026-01-31 20:56:51,518 - INFO -    • Suspicion structuring : 0
+2026-01-31 20:56:51,518 - INFO -    • Montant > 100k€ : 3
+2026-01-31 20:56:51,520 - INFO - Génération des rapports...
+2026-01-31 20:56:51,540 - INFO - ============================================================
+2026-01-31 20:56:51,540 - INFO - PIPELINE TERMINÉ AVEC SUCCÈS
+2026-01-31 20:56:51,540 - INFO - Temps d'exécution : 0.12 secondes
+2026-01-31 20:56:51,540 - INFO - Transactions traitées : 60
+2026-01-31 20:56:51,540 - INFO - Alertes générées : 53
+2026-01-31 20:56:51,540 - INFO - ============================================================
+2026-01-31 21:32:24,294 - INFO - ============================================================
+2026-01-31 21:32:24,294 - INFO - DÉMARRAGE DU PIPELINE DE COMPLIANCE BNP
+2026-01-31 21:32:24,294 - INFO - ============================================================
+2026-01-31 21:32:24,304 - INFO - ========================================
+2026-01-31 21:32:24,306 - INFO - CHARGEMENT ET VALIDATION DES DONNÉES
+2026-01-31 21:32:24,306 - INFO - ========================================
+2026-01-31 21:32:24,335 - INFO - ========================================
+2026-01-31 21:32:24,335 - INFO - NETTOYAGE ET ENRICHISSEMENT
+2026-01-31 21:32:24,336 - INFO - ========================================
+2026-01-31 21:32:24,336 - INFO - Nettoyage des transactions...
+2026-01-31 21:32:24,348 - INFO - Enrichissement des données...
+2026-01-31 21:32:24,357 - INFO -    • 60/60 transactions liées à un client (100.0%)
+2026-01-31 21:32:24,366 - INFO - ========================================
+2026-01-31 21:32:24,366 - INFO - APPLICATION DES RÈGLES DE COMPLIANCE
+2026-01-31 21:32:24,366 - INFO - ========================================
+2026-01-31 21:32:24,367 - INFO - Application des règles de compliance...
+2026-01-31 21:32:24,371 - INFO -    • 48 transactions > 10000€
+2026-01-31 21:32:24,375 - INFO -    • 23 clients risque élevé
+2026-01-31 21:32:24,376 - INFO -    • 2 clients PEP
+2026-01-31 21:32:24,378 - INFO -    • 2 vers pays sanctionnés
+2026-01-31 21:32:24,379 - INFO -    • 3 > 100000€
+2026-01-31 21:32:24,388 - INFO -    • Niveau 'Critique': 4
+2026-01-31 21:32:24,388 - INFO -    • Niveau 'Élevé': 3
+2026-01-31 21:32:24,388 - INFO -    • Niveau 'Moyen': 43
+2026-01-31 21:32:24,388 - INFO -    • Niveau 'Faible': 10
+2026-01-31 21:32:24,396 - INFO -    • Transactions totales : 60
+2026-01-31 21:32:24,396 - INFO -    • Transactions avec alerte : 53
+2026-01-31 21:32:24,396 - INFO -    • Pourcentage d'alertes : 88.3%
+2026-01-31 21:32:24,396 - INFO -    • Montant total à risque : 1,889,325.43 €
+2026-01-31 21:32:24,396 - INFO -    • Niveau 'Moyen' : 43
+2026-01-31 21:32:24,396 - INFO -    • Niveau 'Faible' : 10
+2026-01-31 21:32:24,396 - INFO -    • Niveau 'Critique' : 4
+2026-01-31 21:32:24,396 - INFO -    • Niveau 'Élevé' : 3
+2026-01-31 21:32:24,396 - INFO - ========================================
+2026-01-31 21:32:24,396 - INFO - GÉNÉRATION DES RAPPORTS
+2026-01-31 21:32:24,396 - INFO - ========================================
+2026-01-31 21:32:24,410 - INFO -    • 53 alertes exportées
+2026-01-31 21:36:03,568 - INFO - ============================================================
+2026-01-31 21:36:03,568 - INFO - DÉMARRAGE DU PIPELINE DE COMPLIANCE BNP
+2026-01-31 21:36:03,568 - INFO - ============================================================
+2026-01-31 21:36:03,568 - INFO - ========================================
+2026-01-31 21:36:03,568 - INFO - CHARGEMENT ET VALIDATION DES DONNÉES
+2026-01-31 21:36:03,568 - INFO - ========================================
+2026-01-31 21:36:03,589 - INFO - ========================================
+2026-01-31 21:36:03,589 - INFO - NETTOYAGE ET ENRICHISSEMENT
+2026-01-31 21:36:03,589 - INFO - ========================================
+2026-01-31 21:36:03,589 - INFO - Nettoyage des transactions...
+2026-01-31 21:36:03,596 - INFO - Enrichissement des données...
+2026-01-31 21:36:03,597 - INFO -    • 60/60 transactions liées à un client (100.0%)
+2026-01-31 21:36:03,604 - INFO - ========================================
+2026-01-31 21:36:03,605 - INFO - APPLICATION DES RÈGLES DE COMPLIANCE
+2026-01-31 21:36:03,605 - INFO - ========================================
+2026-01-31 21:36:03,605 - INFO - Application des règles de compliance...
+2026-01-31 21:36:03,607 - INFO -    • 48 transactions > 10000€
+2026-01-31 21:36:03,607 - INFO -    • 23 clients risque élevé
+2026-01-31 21:36:03,613 - INFO -    • 2 clients PEP
+2026-01-31 21:36:03,614 - INFO -    • 2 vers pays sanctionnés
+2026-01-31 21:36:03,615 - INFO -    • 3 > 100000€
+2026-01-31 21:36:03,622 - INFO -    • Niveau 'Critique': 4
+2026-01-31 21:36:03,622 - INFO -    • Niveau 'Élevé': 3
+2026-01-31 21:36:03,623 - INFO -    • Niveau 'Moyen': 43
+2026-01-31 21:36:03,623 - INFO -    • Niveau 'Faible': 10
+2026-01-31 21:36:03,624 - INFO -    • Transactions totales : 60
+2026-01-31 21:36:03,624 - INFO -    • Transactions avec alerte : 53
+2026-01-31 21:36:03,631 - INFO -    • Pourcentage d'alertes : 88.3%
+2026-01-31 21:36:03,631 - INFO -    • Montant total à risque : 1,889,325.43 €
+2026-01-31 21:36:03,632 - INFO -    • Niveau 'Moyen' : 43
+2026-01-31 21:36:03,632 - INFO -    • Niveau 'Faible' : 10
+2026-01-31 21:36:03,632 - INFO -    • Niveau 'Critique' : 4
+2026-01-31 21:36:03,632 - INFO -    • Niveau 'Élevé' : 3
+2026-01-31 21:36:03,634 - INFO - ========================================
+2026-01-31 21:36:03,634 - INFO - GÉNÉRATION DES RAPPORTS
+2026-01-31 21:36:03,634 - INFO - ========================================
+2026-01-31 21:36:03,643 - INFO -    • 53 alertes exportées
+2026-01-31 21:40:02,186 - ERROR - Fichier transactions introuvable : ../data/transactions.csv
+2026-01-31 21:40:02,186 - ERROR -    Structure attendue :
+2026-01-31 21:40:02,186 - ERROR -    semaine_3_pipeline_python/
+2026-01-31 21:41:14,858 - INFO - ============================================================
+2026-01-31 21:41:14,858 - INFO - DEMARRAGE DU PIPELINE DE COMPLIANCE BNP
+2026-01-31 21:41:14,858 - INFO - ============================================================
+2026-01-31 21:41:14,858 - INFO - Configuration des règles chargée
+2026-01-31 21:41:14,870 - INFO - ========================================
+2026-01-31 21:41:14,870 - INFO - CHARGEMENT ET VALIDATION DES DONNEES
+2026-01-31 21:41:14,870 - INFO - ========================================
+2026-01-31 21:41:14,881 - INFO - ========================================
+2026-01-31 21:41:14,885 - INFO - NETTOYAGE ET ENRICHISSEMENT
+2026-01-31 21:41:14,885 - INFO - ========================================
+2026-01-31 21:41:14,885 - INFO - Nettoyage des transactions...
+2026-01-31 21:41:14,892 - INFO - Enrichissement des données...
+2026-01-31 21:41:14,894 - INFO -    • 60/60 transactions liées à un client (100.0%)
+2026-01-31 21:41:14,898 - INFO - Donnees nettoyees et enrichies avec succes
+2026-01-31 21:41:14,899 - INFO - ========================================
+2026-01-31 21:41:14,899 - INFO - APPLICATION DES REGLES DE COMPLIANCE
+2026-01-31 21:41:14,899 - INFO - ========================================
+2026-01-31 21:41:14,899 - INFO - Application des règles de compliance...
+2026-01-31 21:41:14,902 - INFO -    • 48 transactions > 10000€
+2026-01-31 21:41:14,907 - INFO -    • 23 clients risque élevé
+2026-01-31 21:41:14,908 - INFO -    • 2 clients PEP
+2026-01-31 21:41:14,910 - INFO -    • 2 vers pays sanctionnés
+2026-01-31 21:41:14,912 - INFO -    • 3 > 100000€
+2026-01-31 21:41:14,918 - INFO -    • Niveau 'Critique': 4
+2026-01-31 21:41:14,918 - INFO -    • Niveau 'Élevé': 3
+2026-01-31 21:41:14,919 - INFO -    • Niveau 'Moyen': 43
+2026-01-31 21:41:14,919 - INFO -    • Niveau 'Faible': 10
+2026-01-31 21:41:14,945 - INFO - RESUME DES ALERTES DETECTEES :
+2026-01-31 21:41:14,945 - INFO -    - Transactions totales : 60
+2026-01-31 21:41:14,945 - INFO -    - Transactions avec alerte : 53
+2026-01-31 21:41:14,945 - INFO -    - Pourcentage d'alertes : 88.3%
+2026-01-31 21:41:14,945 - INFO -    - Montant total a risque : 1,889,325.43 EUR
+2026-01-31 21:41:14,945 - INFO -    - Niveau 'Moyen' : 43
+2026-01-31 21:41:14,945 - INFO -    - Niveau 'Faible' : 10
+2026-01-31 21:41:14,945 - INFO -    - Niveau 'Critique' : 4
+2026-01-31 21:41:14,945 - INFO -    - Niveau 'Élevé' : 3
+2026-01-31 21:41:14,945 - INFO - Regles de compliance appliquees avec succes
+2026-01-31 21:41:14,945 - INFO - ========================================
+2026-01-31 21:41:14,950 - INFO - GENERATION DES RAPPORTS
+2026-01-31 21:41:14,950 - INFO - ========================================
+2026-01-31 21:41:14,955 - INFO - Fichier complet genere : ../output\transactions_enrichies.csv
+2026-01-31 21:41:14,959 - INFO - Fichier d'alertes genere : ../output\alertes_compliance.csv
+2026-01-31 21:41:14,959 - INFO -    - 53 alertes exportees
+2026-01-31 21:41:14,961 - INFO - Rapport detaille genere : ../output\rapport_detaille.csv
+2026-01-31 21:41:14,963 - INFO - Statistiques JSON generees : ../output\statistiques_pipeline.json
+2026-01-31 21:41:14,963 - INFO - Generation des rapports terminee
+2026-01-31 21:41:14,963 - INFO - ============================================================
+2026-01-31 21:41:14,963 - INFO - PIPELINE TERMINE AVEC SUCCES
+2026-01-31 21:41:14,963 - INFO - ============================================================
+2026-01-31 21:41:14,963 - INFO - TEMPS D'EXECUTION DETAILLE :
+2026-01-31 21:41:14,963 - INFO -    - Configuration : 0.012s
+2026-01-31 21:41:14,963 - INFO -    - Chargement : 0.011s
+2026-01-31 21:41:14,963 - INFO -    - Nettoyage : 0.018s
+2026-01-31 21:41:14,966 - INFO -    - Regles : 0.046s
+2026-01-31 21:41:14,966 - INFO -    - Rapports : 0.017s
+2026-01-31 21:41:14,966 - INFO -    - TOTAL : 0.105s
+2026-01-31 21:41:14,966 - INFO - 
+2026-01-31 21:41:14,966 - INFO - RESULTATS FINAUX :
+2026-01-31 21:41:14,966 - INFO -    - Transactions traitees : 60
+2026-01-31 21:41:14,966 - INFO -    - Alertes generees : 53
+2026-01-31 21:41:14,966 - INFO -    - Taux d'alerte : 88.3%
+2026-01-31 21:41:14,966 - INFO - ============================================================

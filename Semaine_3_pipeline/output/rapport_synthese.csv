@@ -1,0 +1,13 @@
+Catégorie;Détail;Valeur
+Niveau Alerte;Moyen;46
+Niveau Alerte;Faible;7
+Niveau Alerte;Critique;4
+Niveau Alerte;Élevé;3
+Type Alerte;SEUIL_REGLEMENTAIRE;48
+Type Alerte;CLIENT_RISQUE_ELEVE;23
+Type Alerte;MONTANT_EXCEPTIONNEL;3
+Type Alerte;PAYS_SANCTIONNE;2
+Type Alerte;CLIENT_PEP;2
+Montant Total;Toutes transactions;1,942,921.15 €
+Montant Moyen;Par transaction;32,382.02 €
+Montant Alerté;Transactions à risque;1,889,325.43 €

@@ -1,0 +1,44 @@
+// PSEUDO-PROCESSUS BLUE PRISM - BNP COMPLIANCE ORCHESTRATOR
+// Ce diagramme montre l'intégration conçue entre Blue Prism et le pipeline Python
+
+ÉTAPE 1: DÉCLENCHEMENT QUOTIDIEN
+---------------------------------
+Déclencheur: Planificateur (8h00 chaque jour ouvré)
+Action: Vérifier présence fichiers dans \\serveur_bnp\compliance\input\
+Si fichiers présents → Passer à l'étape 2
+Sinon → Notifier administrateur, fin du processus
+
+ÉTAPE 2: APPEL DU PIPELINE PYTHON
+----------------------------------
+Action: Exécuter commande système
+Commande: cmd.exe /c "python C:\BNP_Automation\pipeline.py"
+Paramètres:
+  - Working Directory: C:\BNP_Automation\
+  - Timeout: 300 secondes
+  - Capture output: Oui
+
+ÉTAPE 3: VÉRIFICATION DES RÉSULTATS
+------------------------------------
+Vérifier existence fichier: alertes_compliance.csv
+Si fichier existe:
+  - Lire nombre d'alertes (première ligne)
+  - Si alertes_critiques > 0 → Notifier équipe compliance
+  - Archiver fichiers traités
+Sinon:
+  - Journaliser l'erreur
+  - Notifier support technique
+
+ÉTAPE 4: RAPPORT D'EXÉCUTION
+-----------------------------
+Générer rapport quotidien:
+  - Nombre transactions traitées
+  - Nombre d'alertes par niveau
+  - Temps d'exécution
+  - Statut: Succès/Échec
+Envoyer rapport à: dashboard_compliance@bnp.fr
+
+// CONFIGURATION RÉELLE NÉCESSAIRE DANS BLUE PRISM:
+// 1. Créer Business Object "Windows Command"
+// 2. Modéliser cmd.exe
+// 3. Créer action "Execute Python" avec paramètres ci-dessus
+// 4. Ajouter étapes de gestion d'erreurs et logs

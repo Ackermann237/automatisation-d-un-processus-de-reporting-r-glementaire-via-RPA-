@@ -1,0 +1,82 @@
+{
+  "timestamp": "2026-01-31T21:41:14.961051",
+  "pipeline_version": "1.0",
+  "statistiques": {
+    "initial": {
+      "transactions": {
+        "count": 60,
+        "montant_total": 1942921.1500000001,
+        "montant_moyen": 32382.01916666667,
+        "montant_max": 249981.57,
+        "montant_min": 3591.69,
+        "period_min": "2024-01-01",
+        "period_max": "2024-01-31"
+      },
+      "clients": {
+        "count": 30,
+        "par_risque": {
+          "Moyen": 13,
+          "Faible": 12,
+          "Élevé": 5
+        },
+        "pep_count": 1
+      }
+    },
+    "enriched": {
+      "transactions": {
+        "count": 60,
+        "montant_total": 1942921.1500000001,
+        "montant_moyen": 32382.01916666667,
+        "montant_max": 249981.57,
+        "montant_min": 3591.69,
+        "period_min": "2024-01-01T00:00:00",
+        "period_max": "2024-01-31T00:00:00"
+      },
+      "clients": {
+        "count": 30,
+        "par_risque": {
+          "Moyen": 13,
+          "Faible": 12,
+          "Élevé": 5
+        },
+        "pep_count": 1
+      },
+      "enriched": {
+        "count": 60,
+        "transactions_avec_client": 60
+      }
+    },
+    "rules": {
+      "total_transactions": 60,
+      "transactions_alerte": 53,
+      "distribution_niveaux": {
+        "Moyen": 43,
+        "Faible": 10,
+        "Critique": 4,
+        "Élevé": 3
+      },
+      "montant_total_alerte": 1889325.43,
+      "types_alertes": {
+        "SEUIL_REGLEMENTAIRE": 48,
+        "CLIENT_RISQUE_ELEVE": 23,
+        "MONTANT_EXCEPTIONNEL": 3,
+        "PAYS_SANCTIONNE": 2,
+        "CLIENT_PEP": 2
+      }
+    }
+  },
+  "fichiers_generes": [
+    "transactions_enrichies.csv",
+    "alertes_compliance.csv",
+    "rapport_detaille.csv"
+  ],
+  "alertes": {
+    "total": 53,
+    "par_niveau": {
+      "Moyen": 43,
+      "Critique": 4,
+      "Faible": 3,
+      "Élevé": 3
+    }
+  }
+}

@@ -1,0 +1,7 @@
+Paramètre;Valeur;Description
+Seuil réglementaire;10 000 EUR;Seuil de déclaration obligatoire (réglementation)
+Pays sous sanctions;RU, SY, IR, KP, CU, VE;Liste des pays sous sanctions internationales
+Seuil structuring;9 500 EUR (pour détection structuring);Seuil pour détection de structuring (montants fractionnés)
+Clients PEP à surveiller;1;Nombre de Personnes Politiquement Exposées dans la base
+Montant vérification automatique;100 000 EUR;Montant déclenchant une vérification renforcée
+Devises principales;EUR, USD, GBP, CHF;Devises acceptées dans le système

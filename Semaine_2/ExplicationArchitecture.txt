@@ -1,0 +1,31 @@
+ÉTAPE 3 : Préparer tes Explications (Clé pour l'entretien)
+Pour chaque brique, prépare une explication simple :
+
+1. Pour Blue Prism (Orchestrateur) :
+
+"Blue Prism agit comme le chef d'orchestre. Il se déclenche automatiquement, va chercher les fichiers sources, appelle le traitement Python, et s'assure que tout se passe bien. Si une erreur survient, il la gère et notifie l'équipe. Il ne fait pas le traitement complexe, mais il coordonne tout le flux."
+
+2. Pour Python (Traitement) :
+
+"C'est le moteur qui applique les règles métier bancaires. Il nettoie les données, vérifie les seuils réglementaires (10 000€), croise avec les listes noires, et enrichit les transactions avec les profils clients. C'est beaucoup plus efficace que de coder ces règles directement dans Blue Prism."
+
+3. Pour l'IA (Détection d'anomalies) :
+
+"Cette brique va plus loin que les règles fixes. Elle analyse les patterns pour détecter des comportements suspects comme le 'structuring' (plusieurs transactions juste sous le seuil), ou une transaction inhabituelle pour un client donné. Elle attribue un score de risque."
+
+4. Pour le Reporting :
+
+"Enfin, tout est consolidé dans un rapport clair pour les analystes compliance : les alertes triées par priorité, un dashboard avec les KPIs, et des notifications automatiques pour les cas les plus urgents."
+
+
+ÉTAPE 5 : Anticiper les Questions de l'Entretien
+On pourrait te demander :
+
+Q: "Pourquoi avoir choisi cette architecture plutôt que tout faire dans Blue Prism ?"
+
+Ta réponse : "Blue Prism excelle pour l'orchestration et l'automatisation des tâches répétitives, mais Python est bien plus puissant pour le traitement de données complexes, l'application de règles métier sophistiquées et l'intégration de modèles d'IA. Cette hybridation donne la robustesse du RPA et la puissance de l'analyse de données."
+
+Q: "Comment Blue Prism et Python communiquent-ils concrètement ?"
+
+Ta réponse : "Dans mon POC, Blue Prism peut lancer un script Python en ligne de commande en lui passant les chemins des fichiers à traiter. Python exécute son traitement et écrit les résultats dans un fichier de sortie (CSV ou Excel) que Blue Prism récupère ensuite. C'est simple, robuste et facile à auditer."
+

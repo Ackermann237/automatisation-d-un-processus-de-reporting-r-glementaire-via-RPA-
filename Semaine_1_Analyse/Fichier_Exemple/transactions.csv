@@ -1,0 +1,61 @@
+Transaction_ID;Date;Heure;Client_ID;Type_Operation;Montant;Devise;Bénéficiaire;Pays_Bénéficiaire;Canal;Statut_Compliance;Priorité;Pattern;Commentaire
+TXN-10001;2024-01-16;11:18;CLT-016;Virement;39225.12;CHF;CH5673793086378956174;CH;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10002;2024-01-18;09:56;CLT-007;Retrait;8100.23;EUR;IT1931932019388046742;IT;Agence;Suspicion de structuring;Haute;STRUCTURING;Transaction standard
+TXN-10003;2024-01-11;15:20;CLT-021;Virement;29225.25;EUR;NL5272434641414180506;NL;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10004;2024-01-16;11:23;CLT-030;Virement;28193.38;GBP;DE2200980879634967531;DE;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10005;2024-01-20;12:18;CLT-021;Virement;40374.29;EUR;FR5905269744936514319;FR;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10006;2024-01-21;10:40;CLT-008;Virement;25319.91;EUR;BE1832251268558805795;BE;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10007;2024-01-14;12:23;CLT-016;Prélèvement;5682.51;EUR;IT9938159060829198571;IT;Agence;Surveillance client risque élevé;Moyenne;NORMAL;Transaction standard
+TXN-10008;2024-01-02;10:51;CLT-029;Virement;10582.82;GBP;DE6794765895786976772;DE;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10009;2024-01-13;15:22;CLT-016;Virement;20644.49;USD;ES5371360862003874727;ES;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10010;2024-01-08;10:37;CLT-010;Conversion;8656.2;EUR;BE6753934655252701991;BE;Téléphone;Suspicion de structuring;Haute;STRUCTURING;Transaction standard
+TXN-10011;2024-01-24;16:43;CLT-021;Virement;21876.05;EUR;DE7311411415388992140;DE;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10012;2024-01-07;12:35;CLT-024;Paiement;3591.69;EUR;NL6143304180009351056;NL;Internet;À traiter;Normale;NORMAL;Transaction standard
+TXN-10013;2024-01-29;11:32;CLT-016;Virement;131215.03;EUR;BE5700444394095394278;BE;Internet;Vérification seuil réglementaire;Moyenne;GROS_MONTANT;Transaction standard
+TXN-10014;2024-01-24;08:02;CLT-016;Paiement;9030.39;EUR;RU987654321;RU;Agence;ALERTE: Pays sous sanctions;Haute;STRUCTURING;Contrepartie à risque: Liste noire UE - Sanctions Russie
+TXN-10015;2024-01-25;20:56;CLT-008;Virement;9258.9;CHF;CH7547499796533160004;CH;Mobile;Surveillance client risque élevé;Moyenne;STRUCTURING;Transaction standard
+TXN-10016;2024-01-26;17:20;CLT-004;Virement;25946.09;EUR;FR5082298829140357823;FR;Téléphone;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10017;2024-01-24;12:49;CLT-025;Virement;21394.36;CHF;CH3607877746292773273;CH;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10018;2024-01-09;19:13;CLT-025;Virement;35705.89;EUR;ES5451650220909870727;ES;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10019;2024-01-15;14:34;CLT-003;Retrait;10421.04;USD;FR7232881450165498236;FR;Téléphone;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10020;2024-01-29;17:34;CLT-024;Retrait;11049.14;USD;FR7371650764967602742;FR;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10021;2024-01-22;12:48;CLT-001;Virement;77139.9;EUR;FR5262721137175772776;FR;Mobile;Vérification seuil réglementaire;Moyenne;GROS_MONTANT;Transaction standard
+TXN-10022;2024-01-16;18:02;CLT-027;Virement;249981.57;USD;US123456789;US;Mobile;Vérification seuil réglementaire;Moyenne;GROS_MONTANT;Contrepartie à risque: OFAC Sanctions List
+TXN-10023;2024-01-01;19:45;CLT-005;Retrait;12003.39;EUR;DE4571861947363917552;DE;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10024;2024-01-10;18:38;CLT-004;Paiement;8623.6;EUR;LU4249224599466623911;LU;Internet;Suspicion de structuring;Haute;STRUCTURING;Transaction standard
+TXN-10025;2024-01-12;15:45;CLT-021;Virement;33109.91;EUR;DE9289659024990302189;DE;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10026;2024-01-31;09:17;CLT-005;Virement;30834.03;CHF;CH8616813646904397480;CH;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10027;2024-01-19;19:56;CLT-029;Virement;19011.57;EUR;NL3979898858155688071;NL;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10028;2024-01-07;19:15;CLT-009;Virement;147715.57;USD;CH9041834213405620755;CH;Agence;Vérification seuil réglementaire;Moyenne;GROS_MONTANT;Transaction standard
+TXN-10029;2024-01-18;09:47;CLT-010;Virement;21332.64;EUR;NL6764843449818282850;NL;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10030;2024-01-07;10:17;CLT-018;Virement;24261.51;EUR;BE2647418041337139942;BE;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10031;2024-01-23;10:03;CLT-002;Virement;31929.7;CHF;CH2680120051120292731;CH;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10032;2024-01-27;16:48;CLT-009;Paiement;9153.47;EUR;IR5566778899;IR;Agence;ALERTE: Pays sous sanctions;Haute;STRUCTURING;Contrepartie à risque: Programme nucléaire iranien
+TXN-10033;2024-01-08;09:48;CLT-014;Prélèvement;19080.86;USD;BE8025600394046623587;BE;Téléphone;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10034;2024-01-03;15:04;CLT-007;Virement;8150.05;CHF;CH5771153449648888517;CH;Mobile;Suspicion de structuring;Haute;STRUCTURING;Transaction standard
+TXN-10035;2024-01-21;09:03;CLT-008;Virement;40214.89;GBP;ES7965288042403648693;ES;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10036;2024-01-27;14:47;CLT-006;Virement;14501.67;EUR;BE7594546085163955674;BE;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10037;2024-01-12;17:27;CLT-011;Virement;41814.33;EUR;FR5415165975176947899;FR;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10038;2024-01-16;16:02;CLT-021;Paiement;16732.09;GBP;IT6403774477403815179;IT;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10039;2024-01-25;18:28;CLT-008;Virement;25778.35;EUR;FR9889856916069852114;FR;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10040;2024-01-30;09:14;CLT-008;Virement;44054.25;CHF;CH2989147249334934709;CH;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10041;2024-01-04;17:32;CLT-027;Prélèvement;7783.16;EUR;BE9337547942092939595;BE;Agence;À traiter;Normale;NORMAL;Transaction standard
+TXN-10042;2024-01-09;18:31;CLT-024;Virement;42735.18;EUR;NL9318537713524233168;NL;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10043;2024-01-11;14:02;CLT-021;Virement;27217.16;CHF;CH6272409088335073328;CH;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10044;2024-01-26;15:06;CLT-011;Virement;49421.86;EUR;IT9115160679261700335;IT;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10045;2024-01-12;13:54;CLT-017;Virement;32773.59;EUR;IT2225869254087937136;IT;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10046;2024-01-11;12:14;CLT-022;Virement;44383.19;CHF;CH9864158821241902797;CH;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10047;2024-01-23;14:36;CLT-002;Virement;22239.56;EUR;BE1474175348895735906;BE;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10048;2024-01-03;08:57;CLT-022;Paiement;19188.96;CHF;CH3344480497879969723;CH;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10049;2024-01-18;11:24;CLT-026;Paiement;8690.79;EUR;LU5097848452285258394;LU;Internet;Suspicion de structuring;Haute;STRUCTURING;Transaction standard
+TXN-10050;2024-01-23;17:16;CLT-019;Virement;48899.43;EUR;LU5497113243495849178;LU;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10051;2024-01-22;13:47;CLT-022;Virement;31449.58;EUR;FR6061822287452710892;FR;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10052;2024-01-29;20:07;CLT-005;Virement;26589.53;EUR;BE3695521078479765246;BE;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10053;2024-01-31;15:23;CLT-015;Virement;33848.55;USD;LU6992247964935560740;LU;Internet;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10054;2024-01-13;11:41;CLT-022;Virement;47020.57;EUR;DE4830872491711858670;DE;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10055;2024-01-23;10:24;CLT-003;Virement;20473.96;USD;IT1742160925000708513;IT;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10056;2024-01-23;19:23;CLT-015;Virement;21014.42;GBP;IT7797262278005193962;IT;Agence;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10057;2024-01-28;15:05;CLT-007;Virement;49048.29;CHF;NL9920687661799668213;NL;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10058;2024-01-02;20:57;CLT-021;Virement;12254.09;EUR;ES2124439438288299962;ES;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
+TXN-10059;2024-01-18;10:47;CLT-005;Paiement;8807.41;EUR;FR3159124343451058747;FR;Agence;Surveillance client risque élevé;Moyenne;NORMAL;Transaction standard
+TXN-10060;2024-01-16;18:33;CLT-014;Paiement;18165.74;USD;CH9254462995664907881;CH;Mobile;Vérification seuil réglementaire;Moyenne;NORMAL;Transaction standard
