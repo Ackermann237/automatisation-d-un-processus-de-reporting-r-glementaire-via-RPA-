@@ -666,97 +666,47 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ============================================================================
-# CHARGEMENT DES DONNÉES AMÉLIORÉ
+# CHARGEMENT DES DONNÉES
 # ============================================================================
 @st.cache_data
 def load_data():
-    """Charge les données des fichiers CSV ou génère des données de démo."""
+    """Charge les données des fichiers CSV générés par le pipeline."""
     try:
-        # Essai 1 : Chercher dans le répertoire courant (Streamlit Cloud)
-        base_paths = [
-            "./output/",
-            "./",
-            "output/",
-            "../output/",
-            "data/",
-            "./data/"
-        ]
+        base_path = "../Semaine_3_pipeline/output/"
         
-        for base_path in base_paths:
-            try:
-                # 1. Données d'alertes
-                alertes_path = os.path.join(base_path, "alertes_compliance.csv")
-                if os.path.exists(alertes_path):
-                    alertes_df = pd.read_csv(alertes_path, sep=";", encoding='utf-8')
-                    st.success(f"✅ Données chargées depuis : {alertes_path}")
-                    
-                    # Correction des noms de colonnes
-                    alertes_df.columns = alertes_df.columns.str.replace('Ã©', 'é', regex=False)
-                    alertes_df.columns = alertes_df.columns.str.replace('Ã¨', 'è', regex=False)
-                    alertes_df.columns = alertes_df.columns.str.replace('Ã', 'à', regex=False)
-                    alertes_df.columns = alertes_df.columns.str.replace('Â', '', regex=False)
-                    
-                    return alertes_df, None, None
-            except Exception as e:
-                continue
+        # 1. Données d'alertes
+        alertes_path = os.path.join(base_path, "alertes_compliance.csv")
+        alertes_df = pd.read_csv(alertes_path, sep=";", encoding='utf-8')
         
-        # Si aucun fichier n'est trouvé, générer des données de démonstration
-        st.info("ℹ️ Aucun fichier CSV trouvé. Génération de données de démonstration...")
+        # Correction des noms de colonnes
+        alertes_df.columns = alertes_df.columns.str.replace('Ã©', 'é', regex=False)
+        alertes_df.columns = alertes_df.columns.str.replace('Ã¨', 'è', regex=False)
+        alertes_df.columns = alertes_df.columns.str.replace('Ã', 'à', regex=False)
+        alertes_df.columns = alertes_df.columns.str.replace('Â', '', regex=False)
         
-        # Générer des données de démonstration réalistes
-        np.random.seed(42)
-        n_alertes = 158
+        # 2. Données enrichies
+        transactions_path = os.path.join(base_path, "transactions_enrichies.csv")
+        if os.path.exists(transactions_path):
+            transactions_df = pd.read_csv(transactions_path, sep=";", encoding='utf-8')
+            transactions_df.columns = transactions_df.columns.str.replace('Ã©', 'é', regex=False)
+            transactions_df.columns = transactions_df.columns.str.replace('Ã¨', 'è', regex=False)
+            transactions_df.columns = transactions_df.columns.str.replace('Ã', 'à', regex=False)
+            transactions_df.columns = transactions_df.columns.str.replace('Â', '', regex=False)
+        else:
+            transactions_df = None
         
-        # Types d'alertes réalistes
-        types_alertes = [
-            'Terrorisme;Blanchiment',
-            'Sanctions OFAC',
-            'Transaction suspecte',
-            'Fraude au virement',
-            'LBC/FT',
-            'Politically Exposed Person (PEP)',
-            'Pays à risque',
-            'Transaction inhabituelle'
-        ]
+        # 3. Rapport synthétique
+        rapport_path = os.path.join(base_path, "rapport_detaille.csv")
+        if os.path.exists(rapport_path):
+            rapport_df = pd.read_csv(rapport_path, sep=";", encoding='utf-8')
+        else:
+            rapport_df = None
         
-        # Niveaux de risque avec distribution réaliste
-        niveaux_risque = ['Critique', 'Élevé', 'Moyen', 'Faible']
-        proba_niveaux = [0.05, 0.25, 0.45, 0.25]
-        
-        # Pays réalistes
-        pays_liste = ['FR', 'US', 'GB', 'DE', 'CN', 'RU', 'IR', 'BR', 'NG', 'AE', 'CH', 'SG']
-        proba_pays = [0.3, 0.2, 0.1, 0.1, 0.05, 0.05, 0.05, 0.05, 0.03, 0.03, 0.02, 0.02]
-        
-        alertes_demo = pd.DataFrame({
-            'Transaction_ID': [f'TX{100000 + i:06d}' for i in range(1, n_alertes + 1)],
-            'Client_ID': [f'CLI{np.random.randint(1000, 9999):04d}' for _ in range(n_alertes)],
-            'Montant': np.random.lognormal(7, 1.5, n_alertes).round(2) * 100,
-            'Devise': np.random.choice(['EUR', 'USD', 'GBP', 'CHF'], n_alertes, p=[0.6, 0.2, 0.1, 0.1]),
-            'Alertes': np.random.choice(types_alertes, n_alertes),
-            'Niveau_Alerte': np.random.choice(niveaux_risque, n_alertes, p=proba_niveaux),
-            'Score_Risque': np.random.randint(30, 150, n_alertes),
-            'Pays_Bénéficiaire': np.random.choice(pays_liste, n_alertes, p=proba_pays),
-            'Date_Transaction': pd.date_range(end=datetime.now(), periods=n_alertes, freq='h'),
-            'Type_Transaction': np.random.choice(['Virement', 'Paiement', 'Retrait', 'Dépôt'], n_alertes),
-            'Banque_Bénéficiaire': [f'Bank_{np.random.randint(1, 50):03d}' for _ in range(n_alertes)]
-        })
-        
-        return alertes_demo, None, None
+        return alertes_df, transactions_df, rapport_df
         
     except Exception as e:
         st.error(f"❌ Erreur lors du chargement : {str(e)}")
-        # Retourner des données minimales
-        alertes_minimal = pd.DataFrame({
-            'Transaction_ID': ['TX001'],
-            'Client_ID': ['CLI001'],
-            'Montant': [1000.0],
-            'Devise': ['EUR'],
-            'Alertes': ['Démo - Aucun fichier trouvé'],
-            'Niveau_Alerte': ['Faible'],
-            'Score_Risque': [50],
-            'Pays_Bénéficiaire': ['FR']
-        })
-        return alertes_minimal, None, None
+        return None, None, None
 
 # ============================================================================
 # CONFIGURATION PLOTLY - LIGHT THEME
@@ -820,24 +770,6 @@ with st.sidebar:
     </div>
     """, unsafe_allow_html=True)
     
-    # Upload de fichier optionnel
-    st.markdown("<div class='nav-title'>📤 Upload de Données</div>", unsafe_allow_html=True)
-    
-    uploaded_file = st.file_uploader(
-        "Téléchargez un fichier CSV",
-        type=['csv'],
-        help="Format attendu : alertes_compliance.csv (séparateur ;)",
-        key="csv_uploader"
-    )
-    
-    if uploaded_file is not None:
-        try:
-            alertes_df = pd.read_csv(uploaded_file, sep=";", encoding='utf-8')
-            st.success(f"✅ Fichier chargé : {uploaded_file.name} ({len(alertes_df)} lignes)")
-            st.session_state['uploaded_data'] = alertes_df
-        except Exception as e:
-            st.error(f"❌ Erreur lors du chargement du fichier : {str(e)}")
-    
     if st.button("🔄 Actualiser les données", use_container_width=True):
         st.cache_data.clear()
         st.rerun()
@@ -854,14 +786,9 @@ with st.sidebar:
 # ============================================================================
 # CHARGEMENT DES DONNÉES
 # ============================================================================
-if 'uploaded_data' in st.session_state:
-    alertes_df = st.session_state['uploaded_data']
-    transactions_df = None
-    rapport_df = None
-else:
-    alertes_df, transactions_df, rapport_df = load_data()
+alertes_df, transactions_df, rapport_df = load_data()
 
-if alertes_df is None or len(alertes_df) == 0:
+if alertes_df is None:
     st.error("⚠️ Impossible de charger les données. Vérifiez la configuration.")
     st.stop()
 
@@ -885,7 +812,7 @@ with tab1:
     
     col1, col2, col3, col4 = st.columns(4)
     
-    total_transactions = 1000  # Valeur par défaut pour les données de démo
+    total_transactions = len(transactions_df) if transactions_df is not None else 60
     total_alertes = len(alertes_df)
     taux_alerte = (total_alertes / total_transactions * 100) if total_transactions > 0 else 0
     
@@ -969,8 +896,6 @@ with tab1:
             )
             
             st.plotly_chart(fig_donut, use_container_width=True)
-        else:
-            st.info("ℹ️ Colonne 'Niveau_Alerte' non trouvée dans les données")
     
     with col_chart2:
         st.markdown("### 💰 Exposition Financière par Niveau")
@@ -1000,8 +925,6 @@ with tab1:
             )
             
             st.plotly_chart(fig_bar, use_container_width=True)
-        else:
-            st.info("ℹ️ Colonnes 'Montant' ou 'Niveau_Alerte' non trouvées")
     
     st.markdown("---")
     
@@ -1132,9 +1055,7 @@ with tab1:
                 use_container_width=True
             )
         else:
-            st.success("✅ Excellent ! Aucune alerte critique détectée.")
-    else:
-        st.info("ℹ️ Colonne 'Niveau_Alerte' non trouvée dans les données")
+            st.success("✅ Excellent ! Aucune alerte critique à ce jour.")
 
 # ============================================================================
 # TAB 2 : ANALYSE DÉTAILLÉE
@@ -1152,7 +1073,6 @@ with tab2:
                 filtre_niveau = st.selectbox("🎯 Niveau de Risque", niveaux)
             else:
                 filtre_niveau = 'Tous'
-                st.info("ℹ️ Colonne 'Niveau_Alerte' non disponible")
         
         with col_f2:
             if 'Montant' in alertes_df.columns:
@@ -1167,7 +1087,6 @@ with tab2:
                 )
             else:
                 filtre_montant = 0
-                st.info("ℹ️ Colonne 'Montant' non disponible")
         
         with col_f3:
             if 'Alertes' in alertes_df.columns:
@@ -1181,7 +1100,6 @@ with tab2:
                 filtre_type = st.selectbox("🏷️ Type d'Alerte", types_liste)
             else:
                 filtre_type = 'Tous'
-                st.info("ℹ️ Colonne 'Alertes' non disponible")
         
         with col_f4:
             if 'Score_Risque' in alertes_df.columns:
@@ -1195,7 +1113,6 @@ with tab2:
                 )
             else:
                 filtre_score = 0
-                st.info("ℹ️ Colonne 'Score_Risque' non disponible")
     
     # Application des filtres
     df_filtre = alertes_df.copy()
@@ -1225,8 +1142,6 @@ with tab2:
         if 'Montant' in df_filtre.columns:
             montant_total = df_filtre['Montant'].sum()
             st.metric("💰 Montant Total", f"{montant_total/1000:.0f}k€")
-        else:
-            st.metric("💰 Montant Total", "N/A")
     
     with col_stat3:
         percentage = (len(df_filtre)/len(alertes_df)*100) if len(alertes_df) > 0 else 0
@@ -1236,8 +1151,6 @@ with tab2:
         if 'Score_Risque' in df_filtre.columns and len(df_filtre) > 0:
             score_moyen = df_filtre['Score_Risque'].mean()
             st.metric("⚖️ Score Moyen", f"{score_moyen:.0f}/150")
-        else:
-            st.metric("⚖️ Score Moyen", "N/A")
     
     st.markdown("<br>", unsafe_allow_html=True)
     
@@ -1269,8 +1182,6 @@ with tab2:
                 "Alertes": st.column_config.TextColumn("🚨 Type", width="large")
             }
         )
-    else:
-        st.info("ℹ️ Aucune colonne d'affichage disponible")
     
     # Export
     if len(df_filtre) > 0:
