@@ -912,10 +912,9 @@ with tab1:
                 ),
                 text=montant_par_niveau['Montant'].apply(lambda x: f"{x/1000:.0f}k€"),
                 textposition='outside',
-                textfont=dict(size=12, color='#334155', family='Sora', weight=600),
+                textfont=dict(size=12, color='#334155', family='Sora'),  # <-- RETIRER 'weight'
                 hovertemplate='<b>%{x}</b><br>%{y:,.0f}€<extra></extra>'
             )])
-            
             fig_bar.update_layout(
                 **get_plotly_theme()['layout'],
                 height=380,
