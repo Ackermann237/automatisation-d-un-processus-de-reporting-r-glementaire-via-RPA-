@@ -672,7 +672,7 @@ st.markdown("""
 def load_data():
     """Charge les données des fichiers CSV générés par le pipeline."""
     try:
-        base_path = "../Semaine_3_pipeline/output/"
+        base_path = "Semaine_3_pipeline/output/"
         
         # 1. Données d'alertes
         alertes_path = os.path.join(base_path, "alertes_compliance.csv")
